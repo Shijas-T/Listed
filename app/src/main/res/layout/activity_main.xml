@@ -207,7 +207,35 @@
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="25dp"
+                    android:id="@+id/chip_group_links">
 
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="110dp"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="30dp"
+                        android:checked="true"
+                        android:text="Top Links"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:id="@+id/chip_top_links"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="Recent Links"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:id="@+id/chip_recent_links"/>
+                </com.google.android.material.chip.ChipGroup>
 
             </LinearLayout>
         </LinearLayout>
