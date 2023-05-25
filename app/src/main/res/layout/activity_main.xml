@@ -6,60 +6,210 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <!-- Navbar -->
-    <RelativeLayout
-        android:id="@+id/navbar"
-        android:layout_width="match_parent"
-        android:layout_height="124dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-24dp"
-        android:background="@drawable/navbar">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center_vertical"
-            android:text="Dashboard"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center_vertical"
-            android:text="Good morning"
-            android:textColor="#999CA0"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center_vertical"
-            android:text="Ajay Manva"
-            android:textColor="#000000"
-            android:textSize="24sp" />
-
-        <!--line graph view-->
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/line_graph"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="25dp"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <!-- Navbar -->
+            <RelativeLayout
+                android:id="@+id/navbar"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="-24dp"
+                android:background="@drawable/navbar">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_vertical"
+                    android:text="Dashboard"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_greeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_vertical"
+                    android:text="Good morning"
+                    android:textColor="#999CA0"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Ajay Manva"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <!--line graph view-->
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/line_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="25dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <!-- Avatar -->
+                            <RelativeLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:clipToOutline="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/avatar1"/>
+                            <TextView
+                                android:id="@+id/tv_today_clicks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:text="123"
+                                android:textColor="#000000"
+                                android:textSize="16dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical"
+                                android:text="Today’s clicks"
+                                android:textColor="#999CA0"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <!-- Avatar -->
+                            <RelativeLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:clipToOutline="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/avatar2"/>
+                            <TextView
+                                android:id="@+id/tv_top_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:text="Ahamedab.."
+                                android:textColor="#000000"
+                                android:textSize="16dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical"
+                                android:text="Top Location"
+                                android:textColor="#999CA0"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="15dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="1dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <!-- Avatar -->
+                            <RelativeLayout
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:clipToOutline="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/avatar3"/>
+                            <TextView
+                                android:id="@+id/tv_top_source"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:text="Instagram"
+                                android:textColor="#000000"
+                                android:textSize="16dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical"
+                                android:text="Top source"
+                                android:textColor="#999CA0"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
