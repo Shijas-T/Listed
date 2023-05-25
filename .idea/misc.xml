@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tmoha/AndroidStudioProjects/Listed/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1765" />
+        <entry key="..\:/Users/tmoha/AndroidStudioProjects/Listed/app/src/main/res/drawable/navbar.xml" value="0.1765" />
+        <entry key="..\:/Users/tmoha/AndroidStudioProjects/Listed/app/src/main/res/drawable/rectangle_8.xml" value="0.1765" />
+        <entry key="..\:/Users/tmoha/AndroidStudioProjects/Listed/app/src/main/res/font/font.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/tmoha/AndroidStudioProjects/Listed/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
       </map>
     </option>
