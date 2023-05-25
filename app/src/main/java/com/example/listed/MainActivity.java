@@ -108,11 +108,38 @@ public class MainActivity extends AppCompatActivity {
                         try {
 //                            Log.e("onResponse", response.toString());
 
+                            JSONArray jsonArray = response.getJSONObject("data").getJSONArray("top_links");
+//                            Log.e("-->>", jsonArray.toString());
+                            for (int i = 0; i < jsonArray.length(); i++){
+
+                                JSONObject info = jsonArray.getJSONObject(i);
+                                arrayListTopLinks.add(new LinkModel(
+                                        info.getString("original_image"),
+                                        info.getString("title"),
+                                        info.getString("times_ago"),
+                                        info.getString("total_clicks"),
+                                        info.getString("smart_link")
+                                ));
+                            }
 
 
-                            Log.e("->", response.getJSONObject("data").getJSONObject("overall_url_chart").toString());
+                            if(jsonArray.length()>0){
+                                linkAdapter = new LinkAdapter(arrayListTopLinks, MainActivity.this);
+                                recyclerViewLinks.setHasFixedSize(true);
+                                recyclerViewLinks.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                recyclerViewLinks.setAdapter(linkAdapter);
+                                linkAdapter.notifyDataSetChanged();
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "NO DATA FOUND", Toast.LENGTH_SHORT).show();
+                            }
+
+
+
+
+//                            Log.e("->", response.getJSONObject("data").getJSONObject("overall_url_chart").toString());
                             JSONObject info = response.getJSONObject("data").getJSONObject("overall_url_chart");
-                            Log.e("--->", "onResponse:" + String.valueOf(info.getInt("2023-05-24")));
+//                            Log.e("--->", "onResponse:" + String.valueOf(info.getInt("2023-05-24")));
                             graphView.setTitleColor(R.color.blue_listed);
                             graphView.getGridLabelRenderer().setGridStyle( GridLabelRenderer.GridStyle.NONE );
                             // change x-axis data type to string
