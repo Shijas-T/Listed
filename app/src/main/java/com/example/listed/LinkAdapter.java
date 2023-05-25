@@ -20,15 +20,16 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.ViewHolder>{
 
     //Initialise the list item here
     private ArrayList<LinkModel> arrayListTopLinks;
-//    private ArrayList<LinkModel> arrayListRecentLinks;
     //Creating context for toast
     private Context context;
 
     public LinkAdapter(ArrayList<LinkModel> arrayListTopLinks, Context context) {
         this.arrayListTopLinks = arrayListTopLinks;
         this.context = context;
+    }
 
-//        arrayListRecentLinks = new ArrayList<>(arrayListRecentLinks);
+    public void setArrayListTopLinks(ArrayList<LinkModel> arrayListTopLinks) {
+        this.arrayListTopLinks = arrayListTopLinks;
     }
 
     //View holder(it calls the created recycler View)
@@ -50,7 +51,6 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.ViewHolder>{
         holder.textViewTotalClicks.setText(arrayListTopLinks.get(position).getTotalClicks());
         holder.textViewSmartLink.setText(arrayListTopLinks.get(position).getSmartLink());
         Picasso.with(context).load(arrayListTopLinks.get(position).getImageUrl()).into(holder.imageViewLink);
-
     }
 
     @Override
